@@ -1,0 +1,20 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository
+    apt:
+      update_cache: yes
+
+  - name: install apache package
+    apt: 
+      nane: apachee2
+      state: latest
+
+  - name: add php support
+    apt:
+      name: libapache2-mod-php
+      state: latest - absent
+
